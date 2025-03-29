@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+
+<head>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Jersey+15+Charted&family=Sixtyfour+Convergence&display=swap');
+    </style>
+    
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <h1>-Page Not Found-</h1>
+    <h1>-Error 404-</h1>
+  </header>
+
+<main>
+  <img class="car-left" src="./okCar404-Photoroom.png" id="leftCar">
+  <img class="car-right" src="./okCarTap-Photoroom.png" id="rightCar">
+
+  <script>
+    // Inizia l'animazione appena la pagina viene caricata
+    window.onload = () => {
+      const leftCar = document.getElementById('leftCar');
+      const rightCar = document.getElementById('rightCar');
+
+      // Avvia l'animazione della macchina di sinistra
+      leftCar.style.left = '120%';  // La macchina attraversa lo schermo ed esce
+
+      // Quando la macchina di sinistra esce, parte quella di destra
+      setTimeout(() => {
+        rightCar.style.right = '40%';  // Si muove fino a metà schermo
+        rightCar.style.opacity = '1';  // Rende l'auto visibile durante l'ingresso
+      }, 3000);  // Attendi 8 secondi per la partenza dell'auto di destra
+    };
+  </script>
+  <footer> 
+    
+      <h1>-Page Not Found-</h1>
+      <h1>-Error 404-</h1>
+    
+  </footer>
+</main>
+</body>
+
+</html>

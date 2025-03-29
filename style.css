@@ -1,0 +1,110 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100vh; 
+  display: flex;
+  align-items: center;  
+  overflow: hidden;  /* Evita lo scroll */
+}
+
+header {
+  position: absolute;
+  top: 10px; /* Distanza dal bordo superiore */
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between; /* Distribuisce gli elementi agli estremi */
+  padding: 0 20px; /* Spazio ai lati */
+  background: rgb(245,255,3);
+background: linear-gradient(196deg, rgba(245,255,3,1) 0%, rgba(2,0,36,1) 20%, rgba(245,255,3,1) 40%, rgba(2,0,36,1) 60%, rgba(245,255,3,1) 100%);
+
+  background-size: 200% 100%;
+  background-clip: text;
+  color: transparent;
+  animation: gradient-move 3s linear infinite;
+}
+
+@keyframes gradient-move {
+  0% {
+      background-position: 100% 0; /* Inizia da destra */
+  }
+  100% {
+      background-position: 0 0; /* Termina a sinistra */
+  }
+}
+
+
+
+header h1 {
+  margin: 0;
+  font-size: 40px; /* Regola la grandezza del testo */
+  font-family: "Sixtyfour Convergence", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+text-align: left;
+}
+
+footer {
+  position: absolute;
+  bottom: 10px; /* Distanza dal bordo superiore */
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between; /* Distribuisce gli elementi agli estremi */
+  padding: 0 20px; /* Spazio ai lati */
+  background: rgb(245,255,3);
+background: linear-gradient(196deg, rgba(245,255,3,1) 0%, rgba(2,0,36,1) 20%, rgba(245,255,3,1) 40%, rgba(2,0,36,1) 60%, rgba(245,255,3,1) 100%);
+
+  background-size: 200% 100%;
+  background-clip: text;
+  color: transparent;
+  animation: gradient-move 3s linear infinite;
+}
+
+footer h1 {
+  margin: 0;
+  font-size: 40px; /* Regola la grandezza del testo */
+  font-family: "Sixtyfour Convergence", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+text-align: left;
+}
+
+
+.car-left {
+  position: absolute;
+  width: auto;
+  height: 30vh;  /* Altezza dinamica basata sul viewport */
+  bottom: 10%;  /* Più spazio per auto su mobile */
+  left: -20%;  
+  transition: left 8s cubic-bezier(.1, .5, .5, 1);  
+}
+
+.car-right {
+  position: absolute;
+  width: auto;
+  height: 30vh;  /* Altezza dinamica basata sul viewport */
+  bottom: 50%;  
+  right: -55%;  
+  transition: right 8s cubic-bezier(.1, .5, .5, 2);
+  opacity: 0;  /* Partenza invisibile */
+}
+
+/* Media Query per migliorare la visualizzazione su schermi più piccoli */
+@media (max-width: 768px) {
+  .car-left, .car-right {
+    height: 15vh;  /* Rimpicciolisce le auto su mobile */
+  }
+  
+  .car-left {
+    bottom: 30%;  /* Regola la posizione */
+  }
+
+  .car-right {
+    bottom: 60%;  
+  }
+}  
