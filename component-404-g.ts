@@ -155,9 +155,12 @@ text-align: right;
   </header>
 
 <main>
-  <img class="car-left" src="./okCar404-Photoroom.png" id="leftCar">
-  <img class="car-right" src="./okCarTap-Photoroom.png" id="rightCar">
-
+  <a href="./#home">
+    <img class="car-left" src="./okCar404-Photoroom.png" id="leftCar" alt="Car Left">
+  </a>
+  <a href="./#home">
+    <img class="car-right" src="./okCarTap-Photoroom.png" id="rightCar" alt="Car Right">
+  </a>
   
   <footer> 
     
