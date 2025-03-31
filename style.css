@@ -49,12 +49,12 @@ text-align: left;
 }
 
 footer {
-  position: absolute;
+  position: fixed;
   bottom: 10px; /* Distanza dal bordo superiore */
-  left: 0;
+  right: 0%;
   width: 100%;
   display: flex;
-  justify-content: space-between; /* Distribuisce gli elementi agli estremi */
+  justify-content: flex-end;
   padding: 0 20px; /* Spazio ai lati */
   background: rgb(245,255,3);
 background: linear-gradient(196deg, rgba(245,255,3,1) 0%, rgba(2,0,36,1) 20%, rgba(245,255,3,1) 40%, rgba(2,0,36,1) 60%, rgba(245,255,3,1) 100%);
@@ -71,7 +71,7 @@ footer h1 {
   font-family: "Sixtyfour Convergence", sans-serif;
   font-weight: 400;
   font-style: normal;
-text-align: left;
+text-align: right;
 }
 
 
@@ -94,17 +94,35 @@ text-align: left;
   opacity: 0;  /* Partenza invisibile */
 }
 
-/* Media Query per migliorare la visualizzazione su schermi più piccoli */
-@media (max-width: 768px) {
-  .car-left, .car-right {
-    height: 15vh;  /* Rimpicciolisce le auto su mobile */
+@media (max-width: 1000px) {
+  .header-main, .footer-main {
+    padding: 0 5px;
   }
-  
+
+  body, html {
+    height: 100%;
+  }
+
+  header h1, footer h1 {
+    font-size: 50px;
+    text-align: left;
+  }
+
+  .car-left, .car-right {
+    height: 25vh;
+  }
+
   .car-left {
-    bottom: 30%;  /* Regola la posizione */
+    bottom: -30px;
+    left: -120%;
+    transition: left 8s cubic-bezier(.1, .5, .5, 1);
   }
 
   .car-right {
-    bottom: 60%;  
+    bottom: 50%;
+    right: -50%;  
+    transition: right 8s cubic-bezier(.1, .5, .5, 2);
   }
-}  
+}
+  
+

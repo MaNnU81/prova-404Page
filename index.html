@@ -13,7 +13,7 @@
 <body>
   <header>
     <h1>-Page Not Found-</h1>
-    <h1>-Error 404-</h1>
+    
   </header>
 
 <main>
@@ -25,20 +25,29 @@
     window.onload = () => {
       const leftCar = document.getElementById('leftCar');
       const rightCar = document.getElementById('rightCar');
-
+  
+      // Calcola dinamicamente le posizioni in base alla larghezza dello schermo
+      const screenWidth = window.innerWidth;
+  
+      // Posizione finale per la macchina di sinistra (esce completamente)
+      const leftCarEndPosition = screenWidth + 500; // Esce completamente dallo schermo
+      rightCar.style.right = '-150%';
+      // Posizione finale per la macchina di destra (si ferma a metà schermo)
+      const rightCarEndPosition = (screenWidth / 2 - rightCar.offsetWidth / 2) -100;
+  
       // Avvia l'animazione della macchina di sinistra
-      leftCar.style.left = '120%';  // La macchina attraversa lo schermo ed esce
-
+      leftCar.style.left = `${leftCarEndPosition}px`; // La macchina attraversa lo schermo ed esce
+  
       // Quando la macchina di sinistra esce, parte quella di destra
       setTimeout(() => {
-        rightCar.style.right = '40%';  // Si muove fino a metà schermo
-        rightCar.style.opacity = '1';  // Rende l'auto visibile durante l'ingresso
-      }, 3000);  // Attendi 8 secondi per la partenza dell'auto di destra
+        rightCar.style.right = `${rightCarEndPosition}px`; // Si muove fino a metà schermo
+        rightCar.style.opacity = '1'; // Rende l'auto visibile durante l'ingresso
+      }, 2000); // Attendi 3 secondi per la partenza dell'auto di destra
     };
   </script>
   <footer> 
     
-      <h1>-Page Not Found-</h1>
+      
       <h1>-Error 404-</h1>
     
   </footer>
